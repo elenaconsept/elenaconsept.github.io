@@ -30,18 +30,16 @@ overflow-x:hidden
 
 header{
 min-height:100vh;
-
 background:
 linear-gradient(#0004,#0006),
 url('https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?auto=format&fit=crop&w=1800&q=80')
 center/cover;
-
 display:flex;
 flex-direction:column;
 position:relative
 }
 
-/* LOGO */
+/* NAV */
 
 nav{
 display:flex;
@@ -156,6 +154,69 @@ color:#555;
 font-size:18px
 }
 
+/* SERVICES */
+
+.services{
+background:#fff;
+text-align:center
+}
+
+.services-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:22px;
+max-width:1100px;
+margin:auto
+}
+
+.service{
+padding:38px 25px;
+border:1px solid #eee;
+background:#fff;
+transition:.4s;
+position:relative;
+overflow:hidden
+}
+
+.service:before{
+content:"";
+position:absolute;
+top:0;
+right:0;
+width:100%;
+height:3px;
+background:#c7a26a;
+transform:scaleX(0);
+transform-origin:right;
+transition:.4s
+}
+
+.service:hover{
+transform:translateY(-7px);
+box-shadow:0 15px 35px #9994
+}
+
+.service:hover:before{
+transform:scaleX(1)
+}
+
+.service-icon{
+font-size:38px;
+margin-bottom:15px
+}
+
+.service h3{
+font-family:Georgia,"Times New Roman",serif;
+font-size:23px;
+color:#222;
+margin-bottom:10px
+}
+
+.service p{
+color:#666;
+font-size:15px
+}
+
 /* PROJECTS */
 
 .projects{
@@ -267,7 +328,7 @@ margin-bottom:8px;
 font-weight:bold
 }
 
-/* ANIMATION */
+/* ANIMATIONS */
 
 .reveal{
 opacity:0;
@@ -359,6 +420,7 @@ ELENA CONCEPT
 </div>
 
 <div>
+<a href="#services">خدمات</a>
 <a href="#projects">کانسپت‌ها</a>
 <a href="#about">درباره ما</a>
 <a href="#contact">تماس</a>
@@ -379,8 +441,8 @@ ELENA CONCEPT
 طراحی خلاقانه و متفاوت برای رستوران‌ها، کافه‌ها و فضاهای تجاری.
 </p>
 
-<a class="btn" href="#projects">
-مشاهده کانسپت‌ها
+<a class="btn" href="#services">
+مشاهده خدمات
 </a>
 
 </div>
@@ -406,6 +468,84 @@ ELENA CONCEPT
 از ایده اولیه تا انتخاب رنگ، نور، متریال و جزئیات،
 هدف ما ساخت فضایی متفاوت و ماندگار است.
 </p>
+
+</section>
+
+
+<section class="services reveal" id="services">
+
+<div class="title">
+
+<small>OUR SERVICES</small>
+
+<h2>
+خدمات Elena Concept
+</h2>
+
+</div>
+
+<div class="services-grid">
+
+<div class="service">
+
+<div class="service-icon">♛</div>
+
+<h3>
+طراحی رستوران
+</h3>
+
+<p>
+خلق فضایی خاص، هماهنگ و ماندگار برای تجربه‌ای متفاوت.
+</p>
+
+</div>
+
+
+<div class="service">
+
+<div class="service-icon">☕</div>
+
+<h3>
+طراحی کافی‌شاپ
+</h3>
+
+<p>
+طراحی فضا با تمرکز بر هویت بصری، نورپردازی و حس محیط.
+</p>
+
+</div>
+
+
+<div class="service">
+
+<div class="service-icon">✦</div>
+
+<h3>
+فضای تجاری
+</h3>
+
+<p>
+ایده‌پردازی و طراحی فضاهای تجاری متناسب با شخصیت برند.
+</p>
+
+</div>
+
+
+<div class="service">
+
+<div class="service-icon">◇</div>
+
+<h3>
+کانسپت و ایده‌پردازی
+</h3>
+
+<p>
+تبدیل ایده‌های اولیه به یک کانسپت منسجم و قابل اجرا.
+</p>
+
+</div>
+
+</div>
 
 </section>
 
