@@ -3,31 +3,45 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
+
 <title>Elena Concept | طراحی داخلی</title>
 
 <style>
-*{box-sizing:border-box;margin:0;padding:0}
 
-html{scroll-behavior:smooth}
+*{
+box-sizing:border-box;
+margin:0;
+padding:0
+}
+
+html{
+scroll-behavior:smooth
+}
 
 body{
 font-family:Arial,sans-serif;
-background:#111;
-color:#fff;
+background:#fff;
+color:#222;
 line-height:1.8;
 overflow-x:hidden
 }
 
+/* HEADER */
+
 header{
 min-height:100vh;
+
 background:
-linear-gradient(#0008,#000b),
+linear-gradient(#0004,#0006),
 url('https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?auto=format&fit=crop&w=1800&q=80')
 center/cover;
+
 display:flex;
 flex-direction:column;
 position:relative
 }
+
+/* LOGO */
 
 nav{
 display:flex;
@@ -39,19 +53,27 @@ animation:fadeDown 1s ease both
 }
 
 .logo{
-font-size:25px;
+font-family:Georgia,"Times New Roman",serif;
+font-size:27px;
 font-weight:bold;
-letter-spacing:2px
+letter-spacing:4px;
+color:#fff;
+text-shadow:0 2px 8px #0008;
+font-variant:small-caps
 }
 
 nav a{
-color:white;
+color:#fff;
 text-decoration:none;
 margin-left:25px;
 transition:.3s
 }
 
-nav a:hover{color:#c7a26a}
+nav a:hover{
+color:#d5b06f
+}
+
+/* HERO */
 
 .hero{
 margin:auto 7%;
@@ -62,18 +84,19 @@ animation:fadeUp 1.2s ease .2s both
 
 .hero small{
 letter-spacing:4px;
-color:#d7b889
+color:#e0bd7c
 }
 
 .hero h1{
 font-size:clamp(45px,8vw,90px);
 line-height:1.1;
-margin:20px 0
+margin:20px 0;
+color:#fff
 }
 
 .hero p{
 font-size:19px;
-color:#ddd;
+color:#f1f1f1;
 max-width:600px
 }
 
@@ -82,21 +105,24 @@ display:inline-block;
 margin-top:30px;
 padding:13px 30px;
 background:#c7a26a;
-color:#111;
+color:#fff;
 text-decoration:none;
 border-radius:3px;
 font-weight:bold;
 transition:.3s;
-box-shadow:0 8px 25px #0005
+box-shadow:0 8px 25px #0003
 }
 
 .btn:hover{
 transform:translateY(-4px);
-box-shadow:0 12px 30px #0008
+box-shadow:0 12px 30px #0005
 }
 
+/* SECTIONS */
+
 section{
-padding:90px 7%
+padding:90px 7%;
+background:#fff
 }
 
 .title{
@@ -105,26 +131,32 @@ margin-bottom:50px
 }
 
 .title small{
-color:#c7a26a;
+color:#b38b45;
 letter-spacing:3px
 }
 
 .title h2{
+font-family:Georgia,"Times New Roman",serif;
 font-size:40px;
-margin-top:8px
+margin-top:8px;
+color:#222
 }
 
+/* ABOUT */
+
 .about{
-background:#181818;
+background:#fff;
 text-align:center
 }
 
 .about p{
 max-width:750px;
 margin:auto;
-color:#ccc;
+color:#555;
 font-size:18px
 }
+
+/* PROJECTS */
 
 .projects{
 display:grid;
@@ -140,12 +172,12 @@ border-radius:5px;
 background-size:cover;
 background-position:center;
 transition:.5s;
-box-shadow:0 10px 30px #0008
+box-shadow:0 10px 30px #9995
 }
 
 .card:hover{
 transform:translateY(-8px);
-box-shadow:0 18px 40px #000
+box-shadow:0 18px 40px #7776
 }
 
 .card:before{
@@ -157,7 +189,7 @@ transition:.5s
 }
 
 .card:hover:before{
-background:rgba(0,0,0,.25)
+background:rgba(0,0,0,.22)
 }
 
 .card div{
@@ -165,7 +197,8 @@ position:absolute;
 bottom:0;
 width:100%;
 padding:25px;
-background:linear-gradient(transparent,#000)
+background:linear-gradient(transparent,#000b);
+color:#fff
 }
 
 .card h3{
@@ -176,15 +209,16 @@ font-size:24px
 color:#ddd
 }
 
+/* CONTACT */
+
 .contact{
 text-align:center;
-background:#c7a26a;
-color:#111
+background:#f8f4ec;
+color:#222
 }
 
-.contact .btn{
-background:#111;
-color:#fff
+.contact .title h2{
+color:#222
 }
 
 .contact-info{
@@ -196,7 +230,7 @@ gap:10px
 }
 
 .contact-info a{
-color:#111;
+color:#7c5b27;
 text-decoration:none;
 font-weight:bold;
 font-size:18px;
@@ -204,15 +238,36 @@ transition:.3s
 }
 
 .contact-info a:hover{
-opacity:.7
+opacity:.65
 }
+
+.contact .btn{
+background:#b38b45;
+color:#fff
+}
+
+/* FOOTER */
 
 footer{
 text-align:center;
-padding:25px;
-color:#888;
-background:#0b0b0b
+padding:35px 20px;
+background:#173b68;
+color:#fff;
+font-family:Georgia,"Times New Roman",serif;
+letter-spacing:1px;
+border-top:3px solid #c7a26a
 }
+
+.footer-logo{
+font-family:Georgia,"Times New Roman",serif;
+font-size:24px;
+letter-spacing:4px;
+color:#e0bd7c;
+margin-bottom:8px;
+font-weight:bold
+}
+
+/* ANIMATION */
 
 .reveal{
 opacity:0;
@@ -226,14 +281,28 @@ transform:translateY(0)
 }
 
 @keyframes fadeUp{
-from{opacity:0;transform:translateY(35px)}
-to{opacity:1;transform:translateY(0)}
+from{
+opacity:0;
+transform:translateY(35px)
+}
+to{
+opacity:1;
+transform:translateY(0)
+}
 }
 
 @keyframes fadeDown{
-from{opacity:0;transform:translateY(-20px)}
-to{opacity:1;transform:translateY(0)}
+from{
+opacity:0;
+transform:translateY(-20px)
 }
+to{
+opacity:1;
+transform:translateY(0)
+}
+}
+
+/* MOBILE */
 
 @media(max-width:700px){
 
@@ -243,13 +312,18 @@ flex-direction:column;
 gap:15px
 }
 
+.logo{
+font-size:23px;
+letter-spacing:3px
+}
+
 nav a{
 margin-left:10px;
 font-size:14px
 }
 
 .hero{
-margin: auto 5%;
+margin:auto 5%;
 padding-bottom:60px
 }
 
@@ -270,6 +344,7 @@ height:320px
 }
 
 }
+
 </style>
 </head>
 
@@ -278,13 +353,17 @@ height:320px
 <header>
 
 <nav>
-<div class="logo">ELENA CONCEPT</div>
+
+<div class="logo">
+ELENA CONCEPT
+</div>
 
 <div>
 <a href="#projects">کانسپت‌ها</a>
 <a href="#about">درباره ما</a>
 <a href="#contact">تماس</a>
 </div>
+
 </nav>
 
 <div class="hero">
@@ -312,8 +391,13 @@ height:320px
 <section class="about reveal" id="about">
 
 <div class="title">
+
 <small>ELENA CONCEPT</small>
-<h2>ایده، فضا، تجربه</h2>
+
+<h2>
+ایده، فضا، تجربه
+</h2>
+
 </div>
 
 <p>
@@ -329,18 +413,32 @@ height:320px
 <section id="projects">
 
 <div class="title reveal">
+
 <small>DESIGN CONCEPTS</small>
-<h2>کانسپت‌های طراحی</h2>
+
+<h2>
+کانسپت‌های طراحی
+</h2>
+
 </div>
 
+
 <div class="projects">
+
 
 <div class="card reveal"
 style="background-image:url('https://images.unsplash.com/photo-1552566626-52f8b828add9?auto=format&fit=crop&w=900&q=80')">
 
 <div>
-<h3>کانسپت رستوران</h3>
-<p>Modern Restaurant Concept</p>
+
+<h3>
+کانسپت رستوران
+</h3>
+
+<p>
+Modern Restaurant Concept
+</p>
+
 </div>
 
 </div>
@@ -350,8 +448,15 @@ style="background-image:url('https://images.unsplash.com/photo-1552566626-52f8b8
 style="background-image:url('https://images.unsplash.com/photo-1445116572660-236099ec97a0?auto=format&fit=crop&w=900&q=80')">
 
 <div>
-<h3>کانسپت کافی‌شاپ</h3>
-<p>Luxury Coffee Space</p>
+
+<h3>
+کانسپت کافی‌شاپ
+</h3>
+
+<p>
+Luxury Coffee Space
+</p>
+
 </div>
 
 </div>
@@ -361,11 +466,19 @@ style="background-image:url('https://images.unsplash.com/photo-1445116572660-236
 style="background-image:url('https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?auto=format&fit=crop&w=900&q=80')">
 
 <div>
-<h3>کانسپت فضای تجاری</h3>
-<p>Commercial Interior Concept</p>
+
+<h3>
+کانسپت فضای تجاری
+</h3>
+
+<p>
+Commercial Interior Concept
+</p>
+
 </div>
 
 </div>
+
 
 </div>
 
@@ -375,13 +488,19 @@ style="background-image:url('https://images.unsplash.com/photo-1517248135467-4c7
 <section class="contact reveal" id="contact">
 
 <div class="title">
+
 <small>LET'S CREATE</small>
-<h2>پروژه بعدی شما می‌تواند متفاوت باشد.</h2>
+
+<h2>
+پروژه بعدی شما می‌تواند متفاوت باشد.
+</h2>
+
 </div>
 
 <p>
 برای مشاوره و شروع یک پروژه جدید با Elena Concept در ارتباط باشید.
 </p>
+
 
 <div class="contact-info">
 
@@ -399,6 +518,7 @@ style="background-image:url('https://images.unsplash.com/photo-1517248135467-4c7
 
 </div>
 
+
 <a class="btn" href="mailto:Elenaconcept390@gmail.com">
 تماس با Elena Concept
 </a>
@@ -407,7 +527,15 @@ style="background-image:url('https://images.unsplash.com/photo-1517248135467-4c7
 
 
 <footer>
+
+<div class="footer-logo">
+ELENA CONCEPT
+</div>
+
+<div>
 © 2026 Elena Concept — Interior Design Studio
+</div>
+
 </footer>
 
 
@@ -416,11 +544,17 @@ style="background-image:url('https://images.unsplash.com/photo-1517248135467-4c7
 const reveals=document.querySelectorAll('.reveal');
 
 const observer=new IntersectionObserver((entries)=>{
+
 entries.forEach(entry=>{
+
 if(entry.isIntersecting){
+
 entry.target.classList.add('show');
+
 }
+
 });
+
 },{
 threshold:.15
 });
