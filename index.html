@@ -29,18 +29,47 @@ overflow-x:hidden
 /* HEADER */
 
 header{
+position:relative;
 min-height:100vh;
-background:
-linear-gradient(#0004,#0006),
-url('https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?auto=format&fit=crop&w=1800&q=85')
-center/cover;
+overflow:hidden;
 display:flex;
-flex-direction:column
+flex-direction:column;
+background:#f5f2eb
+}
+
+/* HERO VIDEO */
+
+.hero-video{
+position:absolute;
+inset:0;
+width:100%;
+height:100%;
+object-fit:cover;
+z-index:0
+}
+
+.hero-overlay{
+position:absolute;
+inset:0;
+z-index:1;
+background:
+linear-gradient(
+90deg,
+rgba(255,255,255,.08),
+rgba(255,255,255,.02)
+),
+linear-gradient(
+180deg,
+rgba(0,0,0,.10),
+rgba(0,0,0,.28)
+)
 }
 
 /* NAV */
 
 nav{
+position:relative;
+z-index:3;
 display:flex;
 justify-content:space-between;
 align-items:center;
@@ -63,7 +92,8 @@ nav a{
 color:#fff;
 text-decoration:none;
 margin-left:25px;
-transition:.3s
+transition:.3s;
+text-shadow:0 2px 7px #0007
 }
 
 nav a:hover{
@@ -73,6 +103,8 @@ color:#d5b06f
 /* HERO */
 
 .hero{
+position:relative;
+z-index:2;
 margin:auto 7%;
 max-width:750px;
 padding-bottom:80px;
@@ -81,20 +113,23 @@ animation:fadeUp 1.2s ease .2s both
 
 .hero small{
 letter-spacing:4px;
-color:#e0bd7c
+color:#e0bd7c;
+text-shadow:0 2px 7px #0008
 }
 
 .hero h1{
 font-size:clamp(45px,8vw,90px);
 line-height:1.1;
 margin:20px 0;
-color:#fff
+color:#fff;
+text-shadow:0 3px 15px #0009
 }
 
 .hero p{
 font-size:19px;
-color:#f1f1f1;
-max-width:600px
+color:#f7f7f7;
+max-width:600px;
+text-shadow:0 2px 8px #0008
 }
 
 .btn{
@@ -113,6 +148,45 @@ box-shadow:0 8px 25px #0003
 .btn:hover{
 transform:translateY(-4px);
 box-shadow:0 12px 30px #0005
+}
+
+/* ELENA CONCEPT OVERLAY */
+
+.hero-brand{
+position:absolute;
+z-index:2;
+left:50%;
+top:50%;
+transform:translate(-50%,-50%);
+text-align:center;
+pointer-events:none;
+opacity:0;
+animation:brandAppear 1.8s ease 1.3s forwards
+}
+
+.hero-brand-name{
+font-family:Georgia,"Times New Roman",serif;
+font-size:clamp(34px,6vw,72px);
+letter-spacing:9px;
+color:#fff;
+text-shadow:
+0 2px 8px rgba(0,0,0,.45),
+0 0 25px rgba(255,255,255,.15);
+white-space:nowrap
+}
+
+.hero-brand-line{
+width:90px;
+height:1px;
+background:#e0bd7c;
+margin:16px auto
+}
+
+.hero-brand-sub{
+font-family:Georgia,"Times New Roman",serif;
+font-size:13px;
+letter-spacing:5px;
+color:#f2dfb5
 }
 
 /* SECTIONS */
@@ -368,6 +442,17 @@ transform:translateY(0)
 }
 }
 
+@keyframes brandAppear{
+from{
+opacity:0;
+transform:translate(-50%,-45%)
+}
+to{
+opacity:1;
+transform:translate(-50%,-50%)
+}
+}
+
 /* MOBILE */
 
 @media(max-width:700px){
@@ -409,6 +494,16 @@ font-size:30px
 height:330px
 }
 
+.hero-brand-name{
+font-size:32px;
+letter-spacing:5px
+}
+
+.hero-brand-sub{
+font-size:10px;
+letter-spacing:3px
+}
+
 }
 
 </style>
@@ -417,6 +512,24 @@ height:330px
 <body>
 
 <header>
+
+<!-- HERO VIDEO -->
+
+<video
+class="hero-video"
+autoplay
+muted
+loop
+playsinline
+preload="auto"
+poster="https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?auto=format&fit=crop&w=1800&q=85">
+
+<source src="elena-hero.mp4" type="video/mp4">
+
+</video>
+
+<div class="hero-overlay"></div>
+
 
 <nav>
 
@@ -432,6 +545,22 @@ ELENA CONCEPT
 </div>
 
 </nav>
+
+
+<div class="hero-brand">
+
+<div class="hero-brand-name">
+ELENA CONCEPT
+</div>
+
+<div class="hero-brand-line"></div>
+
+<div class="hero-brand-sub">
+INTERIOR DESIGN
+</div>
+
+</div>
+
 
 <div class="hero">
 
